@@ -1,0 +1,310 @@
+/* ============================
+   Loading / Error state panels
+   (shared pattern with assessment-take.css)
+   ============================ */
+.state-panel {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 40px 20px;
+}
+.state-panel.hidden {
+    display: none;
+}
+.state-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background: #1B232D;
+    color: #10B981;
+}
+.state-icon.error {
+    color: #f87171;
+}
+.state-icon svg {
+    width: 26px;
+    height: 26px;
+}
+.state-icon.spin svg {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.state-panel h2 {
+    font-size: 19px;
+    font-weight: 600;
+}
+.state-panel p {
+    color: #8B949E;
+    font-size: 14px;
+    max-width: 420px;
+}
+.back-to-setup-btn {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 10px;
+    border: 1px solid #30363D;
+    color: #C9D1D9;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .25s ease;
+}
+.back-to-setup-btn:hover {
+    border-color: #10B981;
+    color: #10B981;
+}
+.back-to-setup-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================
+   Results wrapper
+   ============================ */
+.results-wrapper {
+    max-width: 820px;
+    margin: 25px auto 60px;
+}
+.results-wrapper.hidden {
+    display: none;
+}
+
+/* ============================
+   Score summary card
+   ============================ */
+.score-card {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 32px;
+}
+.score-circle {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #1B232D;
+    border: 3px solid #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.score-circle span {
+    font-size: 22px;
+    font-weight: 700;
+    color: #10B981;
+}
+.score-details {
+    flex: 1;
+}
+.score-details h2 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.score-details p {
+    color: #8B949E;
+    font-size: 14px;
+}
+.score-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+.score-tags span {
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: #1B232D;
+    border: 1px solid #30363D;
+    color: #C9D1D9;
+    font-size: 12px;
+}
+.retake-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 1px solid #10B981;
+    color: #10B981;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: .25s ease;
+    flex-shrink: 0;
+}
+.retake-btn:hover {
+    background: #10B981;
+    color: white;
+}
+.retake-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================
+   Breakdown list
+   ============================ */
+.breakdown-heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.question-breakdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.breakdown-card {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 16px;
+    padding: 24px;
+}
+.breakdown-card.correct {
+    border-left: 3px solid #10B981;
+}
+.breakdown-card.incorrect {
+    border-left: 3px solid #f87171;
+}
+.breakdown-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+.breakdown-question-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #F0F6FC;
+}
+.breakdown-question-text .question-number {
+    color: #10B981;
+    font-weight: 600;
+    margin-right: 8px;
+}
+.result-badge {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.result-badge.correct {
+    background: rgba(16, 185, 129, .12);
+    color: #10B981;
+}
+.result-badge.incorrect {
+    background: rgba(248, 113, 113, .12);
+    color: #f87171;
+}
+.result-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.breakdown-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.breakdown-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid #30363D;
+    font-size: 13px;
+    color: #C9D1D9;
+}
+.breakdown-option .option-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.breakdown-option .option-tag svg {
+    width: 13px;
+    height: 13px;
+}
+
+/* The option that was correct */
+.breakdown-option.is-correct-answer {
+    border-color: #10B981;
+    background: rgba(16, 185, 129, .08);
+    color: #F0F6FC;
+}
+.breakdown-option.is-correct-answer .option-tag {
+    color: #10B981;
+}
+
+/* The option the student picked, when it was wrong */
+.breakdown-option.is-wrong-selection {
+    border-color: #f87171;
+    background: rgba(248, 113, 113, .08);
+    color: #F0F6FC;
+}
+.breakdown-option.is-wrong-selection .option-tag {
+    color: #f87171;
+}
+
+.breakdown-explanation {
+    background: #1B232D;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #8B949E;
+}
+.breakdown-explanation strong {
+    color: #C9D1D9;
+}
+
+@media (max-width: 650px) {
+    .score-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .retake-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+.score-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+@media (max-width: 650px) {
+    .score-actions {
+        width: 100%;
+    }
+}

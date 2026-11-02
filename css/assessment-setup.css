@@ -1,0 +1,422 @@
+.setup-wrapper {
+    max-width: 900px;
+    margin: 10px auto 0
+}
+.setup-card {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 22px;
+    padding: 34px;
+}
+.setup-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #30363D;
+}
+.setup-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: #1B232D;
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.setup-icon svg {
+    width: 24px;
+    height: 24px;
+}
+.setup-heading h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.setup-heading p {
+    color: #8B949E;
+    font-size: 14px;
+}
+.setup-section {
+    padding: 27px 0;
+    border-bottom: 1px solid #30363D;
+}
+.setup-section:last-of-type {
+    border-bottom: none;
+}
+.setup-section h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.option-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.option-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px;
+    border: 1px solid #30363D;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+.option-card:hover {
+    border-color: #10B981;
+    background: #1B232D;
+}
+.option-card input {
+    position: absolute;
+    opacity: 0;
+}
+.option-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 25px;
+}
+.option-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+.option-description {
+    color: #8B949E;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.radio-mark {
+    position: absolute;
+    right: 16px;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #6E7681;
+   border-radius: 50%;
+}
+.option-card input:checked ~ .radio-mark {
+    border-color: #10B981;
+    box-shadow: inset 0 0 0 4px #161B22;
+    background: #10B981;
+}
+.option-card:has(input:checked) {
+    border-color: #10B981;
+    background: #1B232D;
+}
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.topic-option {
+    cursor: pointer;
+}
+.topic-option input {
+    position: absolute;
+    opacity: 0;
+}
+.topic-content {
+    min-height: 92px;
+    padding: 15px;
+    border: 1px solid #30363D;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    color: #C9D1D9;
+    transition: .25s ease;
+}
+.topic-content svg {
+    width: 21px;
+    height: 21px;
+    color: #8B949E;
+}
+.topic-content span {
+    font-size: 12px;
+}
+.topic-option:hover .topic-content {
+    border-color: #10B981;
+    background: #1B232D;
+}
+.topic-option input:checked + .topic-content {
+    border-color: #10B981;
+    background: #1B232D;
+    color: #F0F6FC;
+}
+.topic-option input:checked + .topic-content svg {
+    color: #10B981;
+}
+.difficulty-options {
+    display: flex;
+    gap: 12px;
+}
+.difficulty-options label {
+    cursor: pointer;
+}
+.difficulty-options input {
+    position: absolute;
+    opacity: 0;
+}
+.difficulty-options span {
+    display: block;
+    padding: 10px 22px;
+    border: 1px solid #30363D;
+    border-radius: 9px;
+    color: #C9D1D9;
+    font-size: 13px;
+    transition: .25s ease;
+}
+.difficulty-options label:hover span {
+    border-color: #10B981;
+}
+.difficulty-options input:checked + span {
+    background: #1B232D;
+    border-color: #10B981;
+    color: #10B981;
+}
+.question-count {
+    display: flex;
+    gap: 10px;
+}
+.count-btn {
+    min-width: 58px;
+    padding: 10px 15px;
+    border-radius: 9px;
+    border: 1px solid #30363D;
+    background: transparent;
+    color: #C9D1D9;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+.count-btn:hover {
+    border-color: #10B981;
+}
+.count-btn.active {
+    background: #1B232D;
+    border-color: #10B981;
+    color: #10B981;
+}
+.setup-note {
+    margin-top: 12px;
+    color: #6E7681;
+    font-size: 12px;
+}
+.setup-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+}
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #8B949E;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .25s ease;
+}
+.back-btn:hover {
+    color: #F0F6FC;
+}
+.back-btn svg {
+    width: 17px;
+    height: 17px;
+}
+.begin-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 23px;
+    border: none;
+    border-radius: 10px;
+    background: #10B981;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.begin-btn:hover {
+    background: #0E9F6E;
+    transform: translateY(-2px);
+}
+.begin-btn svg {
+    width: 17px;
+    height: 17px;
+}
+@media (max-width: 800px) {
+    .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 650px) {
+    .option-grid {
+        grid-template-columns: 1fr;
+    }
+    .topic-grid {
+       grid-template-columns: 1fr 1fr;
+    }
+    .setup-card {
+        padding: 24px;
+    }
+}
+@media (max-width: 450px) {
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+    .setup-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 15px;
+    }
+    .begin-btn {
+        width: 100%;
+    }
+}
+/* Assessment setup validation messages */
+.setup-error {
+    color: #f87171;
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.topic-error {
+    color: #f87171;
+}
+
+/* Disabled options */
+.option-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.option-card.disabled input {
+    cursor: not-allowed;
+}
+
+.count-btn {
+    cursor: pointer;
+}
+
+.count-btn:focus-visible,
+.topic-option:focus-within,
+.option-card:focus-within {
+    outline: 2px solid #10b981;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   FIX: Number of Questions layout
+   ========================================= */
+
+.question-section {
+    padding: 27px 0;
+    border-bottom: 1px solid #30363D;
+}
+
+.question-section > h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 18px;
+    color: #F0F6FC;
+}
+
+/* Keep the question-count wrapper vertical */
+.question-section .question-count {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Put the three buttons in one horizontal row */
+.count-options {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Individual question-count buttons */
+.question-section .count-btn {
+    min-width: 72px;
+    min-height: 48px;
+    padding: 12px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    border: 1px solid #30363D;
+    background: transparent;
+
+    color: #C9D1D9;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.question-section .count-btn:hover {
+    border-color: #10B981;
+    background: #1B232D;
+}
+
+.question-section .count-btn.active {
+    background: #1B232D;
+    border-color: #10B981;
+    color: #10B981;
+}
+
+.question-section .count-btn:focus-visible {
+    outline: 2px solid #10B981;
+    outline-offset: 3px;
+}
+
+/* Note appears underneath the buttons */
+.question-section .setup-note {
+    margin: 0;
+    padding: 0;
+
+    color: #8B949E;
+    font-size: 13px;
+    line-height: 1.6;
+
+    max-width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .question-section .count-options {
+        gap: 10px;
+    }
+
+    .question-section .count-btn {
+        min-width: 65px;
+        min-height: 44px;
+        padding: 10px 18px;
+    }
+
+    .question-section > h3 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireWise Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<div class="dashboard">
+    <aside class="sidebar">
+    <div class="sidebar-logo">
+    <div class="logo-icon">
+        <i data-lucide="briefcase-business"></i>
+    </div>
+    <div class="logo-text">
+        <h2>HireWise</h2>
+    </div>
+</div>
+<div class="nav-group">
+    <p class="nav-title">OVERVIEW</p>
+    <a href="#" class="nav-link active">
+        <i data-lucide="layout-dashboard"></i>
+        <span>Dashboard</span>
+    </a>
+</div>
+<div class="nav-group">
+    <p class="nav-title">MODULES</p>
+    <a href="resume.php" class="nav-link">
+        <i data-lucide="file-text"></i>
+        <span>Resume Intelligence</span>
+    </a>
+    <a href="assessment.php" class="nav-link">
+        <i data-lucide="brain-circuit"></i>
+        <span>Placement Assessment</span>
+    </a>
+    <a href="recruitment.php"class="nav-link">
+        <i data-lucide="shield-check"></i>
+        <span>Recruitment Analysis</span>
+    </a>
+    <a href="offers.php" class="nav-link">
+        <i data-lucide="briefcase"></i>
+        <span>Offer Comparison</span>
+    </a>
+</div>
+<div class="nav-group">
+    <p class="nav-title">ACCOUNT</p>
+    <a href="#" class="nav-link">
+        <i data-lucide="user-round"></i>
+        <span>Profile</span>
+    </a>
+    <a href="#" id="logoutBtn" class="nav-link">
+        <i data-lucide="log-out"></i>
+        <span>Logout</span>
+    </a>
+</div>
+</aside>
+   <main class="main-content">
+    <div class="topbar">
+        <div class="topbar-left">
+            <h1>Dashboard</h1>
+            <p id="greetingUser">Hello, Student</p>
+        </div>
+        <div class="topbar-right">
+            <div class="user-profile">
+                <div class="avatar">
+                    <i data-lucide="user"></i>
+                </div>
+                <div class="user-details">
+                    <h4 id="profileName">Student</h4>
+                    <p id="profileRole">Student</p>
+                </div>
+                <i class="dropdown-icon"
+                   data-lucide="chevron-down"></i>
+            </div>
+        </div>
+    </div>
+    <section class="welcome-banner">
+        <div>
+            <h2>
+                Continue your placement journey.
+            </h2>
+            <p>
+                Complete assessments, strengthen your resume,
+                analyze opportunities and compare offers —
+                everything in one place.
+            </p>
+        </div>
+    </section>
+<section class="modules-grid">
+    <div class="module-card">
+        <div class="module-icon">
+            <i data-lucide="file-text"></i>
+        </div>
+        <h3>Resume Intelligence</h3>
+        <p>
+            Upload your resume to receive ATS score,
+            skill extraction and personalized suggestions.
+        </p>
+        <div class="module-status pending">
+            <i data-lucide="circle"></i>
+            start
+        </div>
+        <a href="resume.php">
+        <button class="module-btn">
+            Upload Resume
+        </button></a>
+    </div>
+    <div class="module-card">
+        <div class="module-icon">
+            <i data-lucide="brain-circuit"></i>
+        </div>
+        <h3>Placement Assessment</h3>
+        <p>
+            Test your aptitude and technical skills
+            through company-oriented assessments.
+        </p>
+        <div class="module-status pending">
+            <i data-lucide="circle"></i>
+            Start
+        </div>
+        <a href="assessment.php">
+        <button class="module-btn">
+            Start Assessment
+        </button></a>
+    </div>
+    <div class="module-card">
+        <div class="module-icon">
+            <i data-lucide="shield-check"></i>
+        </div>
+        <h3>Recruitment Analysis</h3>
+        <p>
+            Analyze recruitment emails, offer letters
+            and messages for potential risks.
+        </p>
+        <div class="module-status pending">
+            <i data-lucide="circle"></i>
+             Start
+        </div>
+        <a href="recruitment.php">
+        <button class="module-btn">
+            Analyze Files
+        </button></a>
+    </div>
+    <div class="module-card">
+        <div class="module-icon">
+            <i data-lucide="briefcase-business"></i>
+        </div>
+        <h3>Offer Comparison</h3>
+        <p>
+            Compare multiple job offers based on
+            salary, benefits and growth opportunities.
+        </p>
+        <div class="module-status pending">
+            <i data-lucide="circle"></i>
+            Start
+        </div>
+        <a href="offers.php">
+        <button class="module-btn">
+            Compare Offers
+        </button></a>
+    </div>
+</section>
+</main>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

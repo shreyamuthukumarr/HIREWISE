@@ -1,0 +1,513 @@
+/* ============================================================
+   HireWise - Admin Module
+   No sidebar layout (admin is a separate area from the student
+   dashboard). Desktop only, matching the dark theme palette used
+   throughout HireWise: #0D1117 bg, #161B22 cards, #30363D borders,
+   #10B981 accent.
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0D1117;
+    color: #F0F6FC;
+}
+
+.admin-shell {
+    min-height: 100vh;
+}
+
+/* ---------- Topbar ---------- */
+.admin-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid #30363D;
+    background: #161B22;
+}
+.admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #10B981;
+}
+.admin-logo svg {
+    width: 24px;
+    height: 24px;
+}
+.admin-logo h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #F0F6FC;
+}
+.admin-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.admin-user-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 16px;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+    color: #C9D1D9;
+    font-size: 14px;
+}
+.admin-user-chip svg {
+    width: 16px;
+    height: 16px;
+    color: #10B981;
+}
+.admin-logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+    background: transparent;
+    color: #8B949E;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.admin-logout-btn:hover {
+    border-color: #F87171;
+    color: #F87171;
+}
+.admin-logout-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* ---------- Main content ---------- */
+.admin-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+}
+.admin-page-header {
+    margin-bottom: 32px;
+}
+.admin-page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.admin-page-header p {
+    color: #8B949E;
+    font-size: 14px;
+}
+
+/* ---------- Nav cards (admin.php landing) ---------- */
+.admin-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.admin-nav-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 18px;
+    padding: 26px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s ease;
+}
+.admin-nav-card:hover {
+    border-color: #10B981;
+    transform: translateY(-3px);
+}
+.admin-nav-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: #1B232D;
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.admin-nav-icon svg {
+    width: 22px;
+    height: 22px;
+}
+.admin-nav-content {
+    flex: 1;
+}
+.admin-nav-content h3 {
+    font-size: 17px;
+    font-weight: 650;
+    margin-bottom: 6px;
+}
+.admin-nav-content p {
+    color: #8B949E;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.admin-nav-arrow {
+    width: 18px;
+    height: 18px;
+    color: #6E7681;
+    flex-shrink: 0;
+}
+
+/* ---------- Back link (used on sub-pages) ---------- */
+.admin-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #8B949E;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 20px;
+    transition: 0.2s ease;
+}
+.admin-back-link:hover {
+    color: #F0F6FC;
+}
+.admin-back-link svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* ---------- Status banner (shared pattern) ---------- */
+.admin-status-banner {
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border: 1px solid #30363D;
+}
+.admin-status-banner.status-loading {
+    background: #1B232D;
+    color: #8B949E;
+}
+.admin-status-banner.status-error {
+    background: #2D1618;
+    color: #F87171;
+    border-color: #7F1D1D;
+}
+.admin-status-banner.status-info {
+    background: #182820;
+    color: #10B981;
+    border-color: #10B981;
+}
+
+/* ---------- Table (users list) ---------- */
+.admin-table-card {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 18px;
+    overflow: hidden;
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.admin-table th,
+.admin-table td {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid #21262D;
+}
+.admin-table th {
+    color: #8B949E;
+    font-weight: 600;
+    background: #0D1117;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.admin-table td {
+    color: #C9D1D9;
+}
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.role-badge.role-admin {
+    background: #182820;
+    color: #10B981;
+    border: 1px solid #10B981;
+}
+.role-badge.role-student {
+    background: #1B232D;
+    color: #8B949E;
+    border: 1px solid #30363D;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.status-badge.status-active {
+    background: #182820;
+    color: #10B981;
+    border: 1px solid #10B981;
+}
+.status-badge.status-inactive {
+    background: #2D1618;
+    color: #F87171;
+    border: 1px solid #F87171;
+}
+
+.admin-table-actions {
+    display: flex;
+    gap: 8px;
+}
+.admin-action-btn {
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid #30363D;
+    background: transparent;
+    color: #C9D1D9;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.admin-action-btn:hover {
+    border-color: #10B981;
+    color: #10B981;
+}
+.admin-action-btn.danger:hover {
+    border-color: #F87171;
+    color: #F87171;
+}
+.admin-action-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.admin-empty-note {
+    padding: 40px;
+    text-align: center;
+    color: #8B949E;
+    font-size: 14px;
+}
+
+/* ---------- Question bank: filter bar ---------- */
+.admin-page-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.admin-filter-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.admin-filter-bar select {
+    padding: 9px 14px;
+    border-radius: 9px;
+    border: 1px solid #30363D;
+    background: #161B22;
+    color: #F0F6FC;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+.admin-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #10B981;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+.admin-primary-btn:hover {
+    background: #0E9F6E;
+}
+.admin-primary-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ---------- Question text truncation + inactive rows ---------- */
+.question-text-cell {
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+tr.row-inactive {
+    opacity: 0.5;
+}
+.difficulty-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #1B232D;
+    color: #C9D1D9;
+    border: 1px solid #30363D;
+    text-transform: capitalize;
+}
+
+/* ---------- Modal (Add / Edit question) ---------- */
+.admin-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 100;
+}
+.admin-modal-overlay[hidden] {
+    display: none;
+}
+.admin-modal {
+    background: #161B22;
+    border: 1px solid #30363D;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px;
+}
+.admin-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+.admin-modal-header h3 {
+    font-size: 18px;
+    font-weight: 650;
+}
+.admin-modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    border: 1px solid #30363D;
+    background: transparent;
+    color: #8B949E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.admin-modal-close:hover {
+    border-color: #F87171;
+    color: #F87171;
+}
+
+.admin-form-group {
+    margin-bottom: 16px;
+}
+.admin-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #C9D1D9;
+    margin-bottom: 7px;
+}
+.admin-form-group input[type="text"],
+.admin-form-group select,
+.admin-form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 9px;
+    border: 1px solid #30363D;
+    background: #0D1117;
+    color: #F0F6FC;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+.admin-form-group textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+.admin-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.admin-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.admin-form-error {
+    color: #F87171;
+    font-size: 13px;
+    margin-bottom: 14px;
+    min-height: 1em;
+}
+.admin-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #30363D;
+}
+.admin-secondary-btn {
+    padding: 10px 18px;
+    border-radius: 9px;
+    border: 1px solid #30363D;
+    background: transparent;
+    color: #C9D1D9;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.admin-secondary-btn:hover {
+    border-color: #8B949E;
+}
+
+@media (max-width: 800px) {
+    .admin-nav-grid {
+        grid-template-columns: 1fr;
+    }
+    .admin-main {
+        padding: 24px;
+    }
+    .admin-form-row,
+    .admin-options-grid {
+        grid-template-columns: 1fr;
+    }
+}

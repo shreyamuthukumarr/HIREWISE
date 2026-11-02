@@ -1,0 +1,32 @@
+# Python virtual environments
+.venv311/
+.venv-recruit/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Database credentials
+config/db.php
+
+# Uploaded user files
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+datasets/
